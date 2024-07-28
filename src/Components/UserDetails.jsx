@@ -19,7 +19,7 @@ function UserDetail() {
             {profile ? (
                 <div className="profile-detail">
                     <div className="profile-left-col">
-                        <img src={profile.avatar_url} alt="Avatar" className="avatar" />
+                        <img src={profile.avatar_url} alt="Avatar" className="avatar" id="avatar"/>
                         <h1 className="profile-name">{profile.name}</h1>
                         <a href={profile.html_url} className="profile-url" target="_blank" rel="noopener noreferrer">
                             @{profile.login}
@@ -51,12 +51,15 @@ function UserDetail() {
                                 {profile.repos && profile.repos.length > 0 ? (
                                     profile.repos.map(repo => (
                                         <div key={repo.id} className="repo-card">
+                                            <div className="repo-row-1">
+
                                             <h3 className="repo-name">
                                                 <a href={repo.html_url} target="_blank">
                                                     {repo.name}
                                                 </a>
                                             </h3>
                                             <p>{repo.visibility}</p>
+                                            </div>
                                             <p className="repo-description">{repo.description}</p>
                                         </div>
                                     ))
