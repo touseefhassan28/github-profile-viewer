@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Navbar.css";
+import logo from "../assets/logo.png";
 
 function Navbar() {
     const [username, setUsername] = useState("");
@@ -66,7 +67,7 @@ function Navbar() {
             <>
                 <div className="navbar">
                     <div className="logo">
-                        <img src="./src/assets/logo.png" alt="logo" id="logo" />
+                        <img src={logo} alt="logo" id="logo" />
                     </div>
                     <div className="search-bar">
                         <input
